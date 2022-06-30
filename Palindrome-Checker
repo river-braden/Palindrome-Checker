@@ -1,0 +1,18 @@
+function palindrome(str) {
+  const regex = /[^A-Za-z0-9]/gi;
+  const newStr = str.replace(regex, "");
+  let arr = [];
+ arr.push(...newStr);
+  let back_arr = [];
+  back_arr = arr.slice().reverse();
+  arr = arr.map(arr => arr.toUpperCase());
+  back_arr = back_arr.map(back_arr => back_arr.toUpperCase());
+  console.log(arr);
+  console.log(back_arr);
+ for (let i=0; i < arr.length; ++i) {
+     if (arr[i] !== back_arr[i]) return false;
+ } 
+ return true
+}
+
+palindrome("A man, a plan, a canal. Panama");
